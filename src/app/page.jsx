@@ -14,11 +14,11 @@ export default function Home() {
   }
 
   function handleChange(e){
+    e.preventDefault();
     const chosenID = +e.target.value;
-    console.log(chosenID);
-    setVictor(victor.filter((object)=>{
-     return (object.id !== chosenID)
-    }))
+    let updatedArray = victor.filter((object)=> object.id !== chosenID)
+    console.log(updatedArray)
+    setVictor([...updatedArray]);
   }
 
 
